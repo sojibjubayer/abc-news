@@ -6,22 +6,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import Link from "next/link";
 
 const navItems = [
-    {
-        route: 'Home',
-        pathname: '/'
-    },
-    {
-        route: 'Pages',
-        pathname: '/pages'
-    },
-    {
-        route: 'Category',
-        pathname: '/category'
-    },
-    {
-        route: 'News',
-        pathname: '/news'
-    },
+
     {
         route: 'About',
         pathname: '/about'
@@ -35,12 +20,13 @@ const navItems = [
 const Footer = () => {
     return (
         <Box sx={{backgroundColor:'lightslategray',paddingY:'30px'}}>
-            <Container>
+            <Container >
                 <Box sx={{
                     "& svg": {
                         color: 'white'
-                    }
-                }} className='w-full text-center'>
+                    },
+                    textAlign:'center'
+                }} >
 
                     <IconButton>
                         <FacebookIcon />
@@ -55,7 +41,7 @@ const Footer = () => {
                         <InstagramIcon />
                     </IconButton>
                 </Box>
-                <Box className='w-full text-center'>
+                <Box sx={{textAlign:'center'}}>
                     {navItems.map((item) => (
                         <Link key={item} href={item.pathname}>
                             <Button sx={{color:'white'}}>{item.route}</Button>
@@ -63,7 +49,7 @@ const Footer = () => {
                     ))}
                 </Box>
                 <Typography variant="body2" color='white' textAlign='center'>
-                    @2023 News Portal. Design by Jubayer Sojib.
+                    @2023 News Portal. Designed by Jubayer Sojib.
                 </Typography>
             </Container>
         </Box>

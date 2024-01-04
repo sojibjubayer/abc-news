@@ -22,26 +22,16 @@ const navItems = [
         route: 'Home',
         pathname: '/'
     },
-    {
-        route: 'Pages',
-        pathname: '/pages'
-    },
+   
     {
         route: 'Category',
-        pathname: '/categories'
+        pathname: '/categories/news?category=all-news'
     },
     {
-        route: 'News',
-        pathname: '/news'
+        route: 'NewsPapers',
+        pathname: '/newspapers'
     },
-    {
-        route: 'About',
-        pathname: '/about'
-    },
-    {
-        route: 'Contact',
-        pathname: '/contact'
-    },
+ 
 ];
 
 
@@ -54,14 +44,14 @@ function Navbar() {
 
             <AppBar sx={{backgroundColor:'lightslategray',position:'sticky'}}>
                 <Container maxWidth="xl">
-                    <Toolbar disableGutters>
+                    <Toolbar disableGutters sx={{display:'flex' , justifyContent:'space-between'}}>
                         <Link href='/'>
-                            <Image src={logo} alt='logo' width='60' height='60' />
+                            <Image src={logo} alt='logo' width='60' height='60' style={{marginLeft:0}} />
                         </Link>
 
                         <Box className='w-full text-center'>
                             {navItems.map((item) => (
-                                <Link key={item} href={item.pathname}>
+                                <Link key={item} href={item.pathname} style={{marginRight:50}}>
                                     <Button sx={{color:'white'}}>{item.route}</Button>
                                 </Link>
                             ))}
